@@ -1,0 +1,771 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.goatlas.io/deployment/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+    
+    
+      
+        <title>Deployment - Atlas</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a57b2b03.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deployment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Atlas" class="md-header__button md-logo" aria-label="Atlas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Atlas
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deployment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/goatlas-io/atlas" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    goatlas-io/atlas
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Atlas" class="md-nav__button md-logo" aria-label="Atlas" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Atlas
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/goatlas-io/atlas" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    goatlas-io/atlas
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start/" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        F.A.Q.
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/" class="md-nav__link">
+        Components
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Deployment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Deployment
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploy-prometheus-with-thanos-sidecar" class="md-nav__link">
+    Deploy Prometheus with Thanos Sidecar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-deploying-atlas" class="md-nav__link">
+    Step 1. Deploying Atlas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-modify-coredns-configuration" class="md-nav__link">
+    Step 2. Modify CoreDNS Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-add-downstream-cluster-to-observability-cluster" class="md-nav__link">
+    Step 3. Add Downstream Cluster to Observability Cluster
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3. Add Downstream Cluster to Observability Cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-yaml" class="md-nav__link">
+    Using YAML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-cli" class="md-nav__link">
+    Using the CLI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-deploy-envoy-on-downstream-cluster" class="md-nav__link">
+    Step 4. Deploy Envoy on Downstream Cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-repeat" class="md-nav__link">
+    Step 5. Repeat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-configure-downstream-prometheus-for-observability-alertmanagers" class="md-nav__link">
+    Step 6. Configure Downstream Prometheus for Observability Alertmanagers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
+        Development
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploy-prometheus-with-thanos-sidecar" class="md-nav__link">
+    Deploy Prometheus with Thanos Sidecar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-deploying-atlas" class="md-nav__link">
+    Step 1. Deploying Atlas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-modify-coredns-configuration" class="md-nav__link">
+    Step 2. Modify CoreDNS Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-add-downstream-cluster-to-observability-cluster" class="md-nav__link">
+    Step 3. Add Downstream Cluster to Observability Cluster
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3. Add Downstream Cluster to Observability Cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-yaml" class="md-nav__link">
+    Using YAML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-cli" class="md-nav__link">
+    Using the CLI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-deploy-envoy-on-downstream-cluster" class="md-nav__link">
+    Step 4. Deploy Envoy on Downstream Cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-repeat" class="md-nav__link">
+    Step 5. Repeat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-configure-downstream-prometheus-for-observability-alertmanagers" class="md-nav__link">
+    Step 6. Configure Downstream Prometheus for Observability Alertmanagers
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h1>
+<p>You should have at least two clusters to take full advantage of Atlas. One to act as the observability cluster and the other as a downstream cluster, if you have more than two clusters, all the others are downstream clusters too.</p>
+<p>Atlas should only be installed to the <strong>observability</strong> cluster. All downstream clusters will need an envoy instance deployed, Atlas will provide the necessary helm values to configure the downstream clusters.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>It is <strong>HIGHLY</strong> recommend using the same namespace for your observability components, it makes deployment management much easier. The default for atlas is <code>monitoring</code>.</p>
+</div>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<ul>
+<li>1 Cluster to act as the Observability Cluster</li>
+<li>1 Cluster to act as a Downstream Cluster</li>
+<li>Ability to install helm charts</li>
+<li>The envoy helm chart must be installed to an edge node (typically where an ingress instance would be deployed)</li>
+</ul>
+<h3 id="deploy-prometheus-with-thanos-sidecar">Deploy Prometheus with Thanos Sidecar<a class="headerlink" href="#deploy-prometheus-with-thanos-sidecar" title="Permanent link">&para;</a></h3>
+<p>It is recommended you use the same namespace like <code>monitoring</code> for the deployment of Prometheus and Atlas.</p>
+<p>How you deploy Prometheus with the Thanos Sidecar is up to you, however I would recommend simply using the <a href="https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack">kube-prometheus-stack</a> helm chart as it makes this process very simple and takes care of the more complicated bits for you. If you want Thanos persisting to S3 you can pass your S3 credentials along as well.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using <code>kube-prometheus-stack</code> ensure <code>servicePerReplica</code> is enabled for both prometheus and alertmanager sections, this will allow proper routing to each individual instance.</p>
+</div>
+<p>Once you have your Prometheus instances deployed, please make sure to note the service name as it will be necessary for configuring Atlas properly. If you are use <code>kube-prometheus-stack</code> most of the defaults will work out of the box. If you are using something non-standard, please make sure that the Prometheus Port and Thanos Sidecar ports are on the service.</p>
+<h2 id="step-1-deploying-atlas">Step 1. Deploying Atlas<a class="headerlink" href="#step-1-deploying-atlas" title="Permanent link">&para;</a></h2>
+<p>The first step is to deploy Atlas to your observability cluster.</p>
+<div class="highlight"><pre><span></span><code>helm install atlas chart/
+</code></pre></div>
+<h2 id="step-2-modify-coredns-configuration">Step 2. Modify CoreDNS Configuration<a class="headerlink" href="#step-2-modify-coredns-configuration" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I highly recommend using GitOps for modifying and configuring the configmap <code>kube-system/coredns</code></p>
+</div>
+<p>Using your favorite method, you will need to edit the coredns config map in the kube-system namespace.</p>
+<p>Add the following to the Corefile section.</p>
+<div class="highlight"><pre><span></span><code>    atlas:53 {
+        errors
+        cache 30
+        forward . 10.43.43.10
+    }
+</code></pre></div>
+<p>The complete version should look something like the following.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">data</span><span class="p">:</span>
+  <span class="nt">Corefile</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+    <span class="no">.:53 {</span>
+        <span class="no">errors</span>
+        <span class="no">health</span>
+        <span class="no">ready</span>
+        <span class="no">kubernetes cluster.local in-addr.arpa ip6.arpa {</span>
+          <span class="no">pods insecure</span>
+          <span class="no">fallthrough in-addr.arpa ip6.arpa</span>
+        <span class="no">}</span>
+        <span class="no">hosts /etc/coredns/NodeHosts {</span>
+          <span class="no">ttl 60</span>
+          <span class="no">reload 15s</span>
+          <span class="no">fallthrough</span>
+        <span class="no">}</span>
+        <span class="no">prometheus :9153</span>
+        <span class="no">forward . /etc/resolv.conf</span>
+        <span class="no">cache 30</span>
+        <span class="no">loop</span>
+        <span class="no">reload</span>
+        <span class="no">loadbalance</span>
+    <span class="no">}</span>
+    <span class="no">atlas:53 {</span>
+        <span class="no">errors</span>
+        <span class="no">cache 30</span>
+        <span class="no">forward . 10.43.43.10</span>
+    <span class="no">}</span>
+  <span class="nt">NodeHosts</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+    <span class="no">172.20.0.2 k3d-atlas-server-0</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
+</code></pre></div>
+<h2 id="step-3-add-downstream-cluster-to-observability-cluster">Step 3. Add Downstream Cluster to Observability Cluster<a class="headerlink" href="#step-3-add-downstream-cluster-to-observability-cluster" title="Permanent link">&para;</a></h2>
+<p>Telling Atlas about a downstream cluster is as simple as adding a Service resource to your observability cluster or you can use the Atlas binary.</p>
+<h3 id="using-yaml">Using YAML<a class="headerlink" href="#using-yaml" title="Permanent link">&para;</a></h3>
+<p>Be sure to change the <code>name</code>, <code>namespace</code> and the <code>externalIPs</code> section to the appropriate values.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Service</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">labels</span><span class="p">:</span>
+    <span class="nt">goatlas.io/cluster</span><span class="p">:</span> <span class="s">&quot;true&quot;</span>
+    <span class="nt">goatlas.io/replicas</span><span class="p">:</span> <span class="s">&quot;1&quot;</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">downstream1</span>
+  <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">monitoring</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">clusterIP</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
+  <span class="nt">clusterIPs</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">None</span>
+  <span class="nt">externalIPs</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span>
+  <span class="nt">ports</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">prometheus</span>
+      <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">9090</span>
+      <span class="nt">protocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TCP</span>
+      <span class="nt">targetPort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">9090</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">grpc</span>
+      <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10901</span>
+      <span class="nt">protocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TCP</span>
+      <span class="nt">targetPort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10901</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">http</span>
+      <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10902</span>
+      <span class="nt">protocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TCP</span>
+      <span class="nt">targetPort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10902</span>
+</code></pre></div>
+<h3 id="using-the-cli">Using the CLI<a class="headerlink" href="#using-the-cli" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>atlas cluster-add --name <span class="s2">&quot;downstream1&quot;</span> --replicas <span class="m">1</span> --external-ip <span class="s2">&quot;1.1.1.1&quot;</span> 
+</code></pre></div>
+<h2 id="step-4-deploy-envoy-on-downstream-cluster">Step 4. Deploy Envoy on Downstream Cluster<a class="headerlink" href="#step-4-deploy-envoy-on-downstream-cluster" title="Permanent link">&para;</a></h2>
+<p>Atlas generates helm values for the Atlas Envoy Helm Chart for every downstream cluster added. These values come with the necessary seed values to allow initial secure connections to be established. Once comms are established the Envoy Aggreggated Discovery capabilites take over ensuring the downstream envoy instance stays configure properly.</p>
+<p>Retrieve the downstream's helm values with the <code>atlas</code> or <code>kubectl</code></p>
+<div class="highlight"><pre><span></span><code>atlas cluster-values --name <span class="s2">&quot;downstream1&quot;</span> &gt; downstream1.yaml
+</code></pre></div>
+<p><strong>Note:</strong> This command has <code>--format</code> option, the default is <code>raw</code> which is just values for helm. The other options are <code>helm-chart</code> and <code>helm-release</code></p>
+<ul>
+<li><code>helm-chart</code> -- this is a feature from Rancher on K3S clusters</li>
+<li><code>helm-release</code> -- this is for Flux V2</li>
+<li><code>raw</code> -- just values for helm install/upgrade commands</li>
+</ul>
+<p>OR</p>
+<div class="highlight"><pre><span></span><code>kubectl get secret -n monitoring downstream1-envoy-values -o json <span class="p">|</span> jq -r <span class="err">&#39;</span>.data.<span class="s2">&quot;values.yaml&quot;</span> <span class="p">|</span> base64 -D &gt; downstream1.yaml
+</code></pre></div>
+<p>Once you have the values, install helm on your downstream cluster. Make sure you switch to your downstream cluster context now.</p>
+<div class="highlight"><pre><span></span><code>helm install envoy --values downstream1.yaml chart/
+</code></pre></div>
+<h2 id="step-5-repeat">Step 5. Repeat<a class="headerlink" href="#step-5-repeat" title="Permanent link">&para;</a></h2>
+<p>If you have more than one downstream cluster, repeast steps 3 and 4 until you've added all your clusters.</p>
+<h2 id="step-6-configure-downstream-prometheus-for-observability-alertmanagers">Step 6. Configure Downstream Prometheus for Observability Alertmanagers<a class="headerlink" href="#step-6-configure-downstream-prometheus-for-observability-alertmanagers" title="Permanent link">&para;</a></h2>
+<p>To take full advantage of what Atlas offers, you can configure your downstream prometheus instances to talk to the alertmanagers in the observability cluster.</p>
+<p>You'll need to add an alertmanager entry per the number of alertmanagr instances that are on the observability cluster to the downstream prometheus instance. If you are using the prometheus operator then you can simple add an additional alert managers configuration like the following.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Secret</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">additional-alertmanager-configs</span>
+  <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">monitoring</span>
+<span class="nt">data</span><span class="p">:</span>
+  <span class="nt">config.yaml</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+    <span class="no">- scheme: http</span>
+      <span class="no">static_configs:</span>
+      <span class="no">- targets:</span>
+        <span class="no">- %s</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Configuration
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../development/" class="md-footer__link md-footer__link--next" aria-label="Next: Development" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Development
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b1047164.min.js"></script>
+      
+    
+  </body>
+</html>
